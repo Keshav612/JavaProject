@@ -34,17 +34,22 @@ public class Doctor
 	 if(a11>1)
      {
     	System.out.println("Wrong input .enter only one or zero"); 
-        a=in.nextInt();
+        a11=in.nextInt();
      }
-	 System.out.println("Are you having stomach fever");
+	 System.out.println("Are you having stomachache");
 	 int a12=in.nextInt();
+	 if(a12>1)
+     {
+    	System.out.println("Wrong input.enter only one or zero"); 
+        a12=in.nextInt();
+     }
 	 System.out.println("What is your fever temperature in celcius.");
 	 double a8=in.nextDouble();
 	 System.out.println("Do you have chilling fever");
      int a=in.nextInt();
      if(a>1)
      {
-    	System.out.println("Wrong input .enter only one or zero"); 
+    	System.out.println("Wrong input.enter only one or zero"); 
         a=in.nextInt();
      }
      System.out.println("Do you have headache");
@@ -98,18 +103,29 @@ public class Doctor
      {
     	 System.out.println("You have hyperpyrexia");
      }
-    	 
+     if(a10>5)
+     {
+    	 System.out.println("You are having continuous fever");
+     }
+     if(a10==2)
+     {
+    	 System.out.println("You are having Double Quotidian fever");
+     }
+     if(a10==4)
+     {
+    	 System.out.println("You are having Quartan fever");
+     }  	 
 	 switch(a6)
 	 {
 	 case 1:
 		      
-			    	  if(a==1 && a2==1 && a3==1 &&a4==1&&a7==1)
+			    	  if(a==1 && a2==1 && a3==1 &&a4==1&&a7==1 && a10==4 && a9>=10 && a10>=4 && a11==1 && a12==1)
 			    	  { 
-			    		  System.out.println("You might have malaria .");
+			    		  System.out.println("You are having malaria due to Plasmodium malariae.");
 	    			      System.out.println("Conduct these test :");
 	    			      System.out.println("Blood smear");
 			    	  }
-			    	  if(a==1 && a2==0 && a3==1 &&a4==1&& (a7==1||a7==0) )
+			    	  if(a==1 && a2==0 && a3==1 &&a4==1&& (a7==1||a7==0) && a11==1 && a12==1 && a10==1)
 			    	  { 
                         System.out.println("You may have Dengue hemorraghic fever (DHF)");
                         System.out.println("Conduct dengue test and then visit again");
