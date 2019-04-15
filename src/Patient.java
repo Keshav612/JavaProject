@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.UUID;
-public class Patient
+public class Patient extends Doctor
 {   
   static int a;
   String s2="";

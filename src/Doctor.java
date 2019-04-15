@@ -1,7 +1,9 @@
 import java.util.*;
 public class Doctor 
 {
-	 int a=0;int a2=0;int a3=0;int a4=0,a5=0,a6=0,a7=0;
+	 int a=0;int a2=0;
+	 int a3=0;
+	 int a4=0,a5=0,a6=0,a7=0;
  void illness() 
  {
 	 Scanner in = new Scanner(System.in);
@@ -12,6 +14,7 @@ public class Doctor
      if(a5==1)
      {
     	 a6=1;
+    	 a=1;
     	
      }
      if(a5==0)
@@ -22,6 +25,10 @@ public class Doctor
      }
      
 	 String ill="";
+	 System.out.println("From how many days are you suffering from fever.");
+	 int a9=in.nextInt();
+	 System.out.println("What is your fever temperature in fahreheit.");
+	 int a8=in.nextInt();
 	 System.out.println("Do you have chilling fever");
      int a=in.nextInt();
      if(a>1)
@@ -57,7 +64,22 @@ public class Doctor
     	System.out.println("Wrong input .enter only one or zero"); 
         a7=in.nextInt();
      }
-     
+     if(a==0 && a5==1 )
+     {
+    	 System.out.println("Chilling fever is type of fever so select fever as 1.");
+     }
+     if(a==1 && a5==0) {
+    	 System.out.println("This type of fever is not in our database refer to doctor.");
+     }
+     if(a8>=101)
+     {
+    	 System.out.println("You have chilling fever too.");
+     }
+     else
+     {
+    	 System.out.println("You don't have chilling fevet at present.");
+     }
+    	 
 	 switch(a6)
 	 {
 	 case 1:
@@ -68,22 +90,24 @@ public class Doctor
 	    			      System.out.println("Conduct these test :");
 	    			      System.out.println("Blood smear");
 			    	  }
-			    	  if(a==1 && a2==0 && a3==1 &&a4==1&& (a7==1||a7==0))
+			    	  if(a==1 && a2==0 && a3==1 &&a4==1&& (a7==1||a7==0) )
 			    	  { 
                         System.out.println("You may have Dengue hemorraghic fever (DHF)");
                         System.out.println("Conduct dengue test and then visit again");
 			    	  }
 			    	  if(a==1 && a2==0 && a3==0 &&a4==1&&(a7==1||a7==0))
 			    	  { 
-                        System.out.println("You have low haemoglobin.Conduct haemoglobin test.");
+                        System.out.println("Remit Tent fever.");
 			    	  }
-			    	  if(a==1 && a2==0 && a3==0 &&a4==0&&(a7==1||a7==0))
+		      
+		      
+			    	  if(a==1 && a2==0 && a3==0 &&a4==0&&(a7==1||a7==0) )
 			    	  { 
                         System.out.println("You have a viral fever");
 			    	  }
 			    	  if(a==1 && a2==1 && a3==0 &&a4==1&&(a7==1||a7==0))
 			    	  { 
-                        System.out.println("You are suffering from febrile convulsions.");
+                        System.out.println("You are suffering from febrile convulsions fever.");
 			    	  }
 			    	  if(a==1 && a2==1 && a3==0 &&a4==0&&(a7==1||a7==0))
 			    	  { 
@@ -102,16 +126,14 @@ public class Doctor
                         System.out.println("DOLO 600mg");
                         System.out.println("Becausul");
 			    	  }	
-			    	  if(a==1 && a2==0 && a3==1 &&a4==0&&(a7==1||a7==0))
+			    	  if(a==1 && a2==0 && a3==1 &&a4==0&&a7==0)
 			    	  { 
-                        System.out.println("You are suffering from chill seizure");
+                        System.out.println("You may have Intermittent fever");
 			    	  }
+		      
 		      break;
 	 case 2:
-	 if(a==1)
-   	 {
-   		 System.out.println("Please run again and run the program again with correct input");
-     }
+	 
       if(a==0 && a2==0 && a3==1 && a4==0 && (a7==1||a7==0))
    	  { 
    		  System.out.println("you have low blood pressure");
@@ -180,6 +202,11 @@ public class Doctor
 	 System.out.println("WELCOME");
 	 Doctor ob = new Doctor();
 	 
+	 Patient obj = new Patient();
+	 Patient.main(null);
+	 
+
+	
 	ob.illness();
 }
 }
