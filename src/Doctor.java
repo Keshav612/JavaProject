@@ -27,8 +27,19 @@ public class Doctor
 	 String ill="";
 	 System.out.println("From how many days are you suffering from fever.");
 	 int a9=in.nextInt();
-	 System.out.println("What is your fever temperature in fahreheit.");
-	 int a8=in.nextInt();
+	 System.out.println("What is the frequency or times you have fever in a day");
+	 int a10=in.nextInt();
+	 System.out.println("Are you having itching over your body or having rashes");
+	 int a11=in.nextInt();
+	 if(a11>1)
+     {
+    	System.out.println("Wrong input .enter only one or zero"); 
+        a=in.nextInt();
+     }
+	 System.out.println("Are you having stomach fever");
+	 int a12=in.nextInt();
+	 System.out.println("What is your fever temperature in celcius.");
+	 double a8=in.nextDouble();
 	 System.out.println("Do you have chilling fever");
      int a=in.nextInt();
      if(a>1)
@@ -71,13 +82,21 @@ public class Doctor
      if(a==1 && a5==0) {
     	 System.out.println("This type of fever is not in our database refer to doctor.");
      }
-     if(a8>=101)
+     if(a8>=38 && a8<=39)
      {
-    	 System.out.println("You have chilling fever too.");
+    	 System.out.println("You have low grade fever.");
      }
-     else
+     if(a8>39 && a8<=40)
      {
-    	 System.out.println("You don't have chilling fevet at present.");
+    	 System.out.println("You have moderate fever.");
+     }
+     if(a8>40 && a8<=41)
+     {
+    	 System.out.println("You have high fever");
+     }
+     if(a8>41)
+     {
+    	 System.out.println("You have hyperpyrexia");
      }
     	 
 	 switch(a6)
@@ -206,7 +225,7 @@ public class Doctor
 	 Patient.main(null);
 	 
 
-	
+	  //object
 	ob.illness();
 }
 }
